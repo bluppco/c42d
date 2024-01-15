@@ -9,11 +9,13 @@ import Blog from "../components/index/Blog.astro";
 ---
 
 <IndexLayout>
-  <div class="mt-64 container mx-auto">
+  <div class="mt-44 container mx-auto">
     <Hero />
     <Customers />
     <div class="border-b">
-      <p class="uppercase text-3xl container py-2">area of speciality:</p>
+      <p class="uppercase text-2xl container py-2 font-serif">
+        area of speciality:
+      </p>
       <Work
         domain="healthcase"
         work="Branding"
@@ -35,7 +37,7 @@ import Blog from "../components/index/Blog.astro";
         alt="The Humane branding banner"
       />
     </div>
-    <div class="flex m-64">
+    <div class="flex mt-32 lg:mt-64">
       <Metrix
         data="50"
         title="verified reviews"

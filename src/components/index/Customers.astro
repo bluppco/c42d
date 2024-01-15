@@ -20,11 +20,11 @@ const customers = [
 ];
 ---
 
-<section class="my-16">
-  <div class="grid grid-cols-3 md:grid-cols-5 gap-x-32">
+<section class="m-16 mx-auto">
+  <div class="grid grid-cols-3 md:grid-cols-5 place-items-center">
     {
       customers.map((brand) => (
-        <Icon name={`customers/${brand}`} height={140} width={140} />
+        <Icon name={`customers/${brand}`} height={100} width={100} />
       ))
     }
   </div>
