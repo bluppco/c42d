@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon/components";
+
+const customers = [
+  "youtube",
+  "kindbody",
+  "cuebiq",
+  "brightline",
+  "midday",
+  "cgs",
+  "foundation",
+  "nesterly",
+  "shazam",
+  "reebok",
+  "k50",
+  "andala",
+  "atai",
+  "sage",
+  "fluent",
+];
+---
+
+<section class="my-16">
+  <div class="grid grid-cols-3 md:grid-cols-5 gap-x-32">
+    {
+      customers.map((brand) => (
+        <Icon name={`customers/${brand}`} height={140} width={140} />
+      ))
+    }
+  </div>
+</section>

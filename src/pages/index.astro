@@ -1,8 +1,54 @@
 ---
 import IndexLayout from "../layout/IndexLayout.astro";
-import Body from "../components/Body.astro";
+import Hero from "../components/index/Hero.astro";
+import Customers from "../components/index/Customers.astro";
+import Work from "../components/index/Work.astro";
+import Metrix from "../components/index/Metrix.astro";
 ---
 
 <IndexLayout>
-  <Body />
+  <div class="mt-64 container mx-auto">
+    <Hero />
+    <Customers />
+    <div class="border-b">
+      <p class="uppercase text-3xl container py-2">area of speciality:</p>
+      <Work
+        domain="healthcase"
+        work="Branding"
+        project="Kindbody"
+        img="/images/kindbody.png"
+        alt="Kindbody branding banner"
+      />
+      <Work
+        work="Branding for venture capital"
+        project="Foundation Capital"
+        img="/images/foundation.png"
+        alt="Foundation branding banner"
+      />
+      <Work
+        domain="ui/ux"
+        work="design"
+        project="The Humane Space"
+        img="/images/ux.png"
+        alt="The Humane branding banner"
+      />
+    </div>
+    <div class="flex m-64">
+      <Metrix
+        data="50"
+        title="verified reviews"
+        description="from real clients on clutch.co"
+      />
+      <Metrix
+        data="4.9"
+        title="out of 5"
+        description="average referal rating on clutch.co"
+      />
+      <Metrix
+        data="15"
+        title="years in business"
+        description="working from visionary companies"
+      />
+    </div>
+  </div>
 </IndexLayout>
