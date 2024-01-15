@@ -5,6 +5,7 @@ import Customers from "../components/index/Customers.astro";
 import Work from "../components/index/Work.astro";
 import Metrix from "../components/index/Metrix.astro";
 import Quotes from "../components/index/Quotes.astro";
+import Blog from "../components/index/Blog.astro";
 ---
 
 <IndexLayout>
@@ -56,5 +57,22 @@ import Quotes from "../components/index/Quotes.astro";
       post="Software Developer"
       quote="I love you the more in that I believe you had liked me for my own sake and for nothing else I love you the more in that I believe you had liked me for my own sake and for nothing else"
     />
+    <div class="mb-32">
+      <Blog
+        title="C42D Client Midday Featured in Fast Company"
+        img="/images/blog/midday.png"
+        alt="Blog Midday Banner"
+      />
+      <Blog
+        title="Clutch Names C42D a 2022 Top New York Branding Agenc BY DAVID CARD"
+        img="/images/blog/clutch.png"
+        alt="Blog Clutch Banner"
+      />
+      <Blog
+        title="C42D Client Kindbody Chosen as a 2022 Breakthrough Brand by Interbrand"
+        img="/images/blog/kindbody.png"
+        alt="Blog Kindbody Banner"
+      />
+    </div>
   </div>
 </IndexLayout>

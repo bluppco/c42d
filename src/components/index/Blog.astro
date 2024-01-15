@@ -1,0 +1,24 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { img, alt, title } = Astro.props;
+---
+
+<section class="border-t py-8 pb-16 flex">
+  <img src={img} alt={alt} class="flex-1" />
+  <div class="flex-1 flex flex-col p-4 justify-between">
+    <div>
+      <span class="text-brandYellow uppercase font-bold text-sm"
+        >news article</span
+      >
+      <p class="text-3xl">{title}</p>
+    </div>
+    <div class="flex items-center gap-2 font-bold text-xl">
+      <span
+        class="font-bold text-sm md:text-lg hover:text-brandYellow transition delay-150 cursor-pointer"
+        >Read More</span
+      >
+      <Icon name="boldArrow" class="text-brandYellow" />
+    </div>
+  </div>
+</section>

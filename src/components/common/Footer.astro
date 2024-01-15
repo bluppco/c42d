@@ -1,15 +1,45 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const currentYear = new Date().getFullYear();
 ---
 
-<footer>
-  <div class="flex p-8 items-center justify-between">
-    <div>
-      C42D is a New York branding agency with a focus on healthcare branding,
-      branding for startups, and branding for venture capital firms
+<footer class="border-t h-full">
+  <div class="flex py-16 justify-between container mx-auto h-full">
+    <div class="">
+      <div class="mb-16">
+        <img src="/logo.png" alt="Logo" width="70" height="70" />
+        <p class="w-96 text-xl">
+          C42D is a New York branding agency with a focus on healthcare
+          branding, branding for startups, and branding for venture capital
+          firms
+        </p>
+      </div>
+      <div class="flex items-center gap-2 font-bold text-2xl">
+        <span>Start a Project</span>
+        <Icon name="boldArrow" class="text-brandYellow" />
+      </div>
     </div>
-    <div>
-      &copy; {currentYear} C42D Creative Inc. All Rights
+    <div class="flex flex-col justify-between">
+      <div class="flex items-center gap-4 justify-end">
+        <span
+          class="text-xl font-bold hover:text-brandYellow transition delay-150 cursor-pointer"
+          >Enhance Your Inbox</span
+        >
+        <Icon name="arrowRight" class="text-brandYellow" />
+      </div>
+      <div>
+        <div class="flex items-center gap-2 justify-end py-4">
+          <Icon name="socials/dribble" />
+          <Icon name="socials/fb" />
+          <Icon name="socials/in" />
+        </div>
+        <div class="text-xs">
+          &copy; {currentYear} C42D Creative Inc. All Rights <span
+            class="underline">Privacy Policy</span
+          >
+        </div>
+      </div>
     </div>
   </div>
 </footer>
