@@ -1,0 +1,74 @@
+---
+import SingleQuote from "./SingleQuote.astro";
+---
+
+<section class="relative p-16">
+  <div class="quote">
+    <SingleQuote
+      name="Mallory Walsh"
+      post="head of marketing, teal health"
+      quote="I could not be happier with my decision to select C42D for this project; they were the most responsive, detailed, and efficient agency I’ve ever experienced. I could not be more proud of the work we created together and the brand we’ve built."
+    />
+  </div>
+  <div class="quote">
+    <SingleQuote
+      name="Alexis Rodriguez"
+      post="Head of Global Marketing Solutions, Shazam"
+      quote="We’ve interviewed several other large firms, but the C42D team seemed to understand our goals more quickly than others."
+    />
+  </div>
+  <div class="quote">
+    <SingleQuote
+      name="Jay Hack"
+      post="Founder & CEO, Mira AI"
+      quote="They truly seemed to understand our base and vision. Work with C42D, they’re awesome. We highly recommend them."
+    />
+  </div>
+
+  <span
+    id="left"
+    class="absolute text-4xl bottom-4 left-96 cursor-pointer text-brandYellow"
+    >&larr;</span
+  >
+  <span
+    id="right"
+    class="absolute text-4xl bottom-4 right-96 cursor-pointer text-brandYellow"
+    onclick="plusSlider(1)">&rarr;</span
+  >
+</section>
+
+<script>
+  let quoteIndex = 1;
+  showQuotes(quoteIndex);
+
+  document.getElementById("left").addEventListener("click", () => {
+    showQuotes((quoteIndex -= 1));
+  });
+  document.getElementById("right").addEventListener("click", () => {
+    showQuotes((quoteIndex += 1));
+  });
+
+  function showQuotes(n: number) {
+    let i: number;
+    let quotes = document.getElementsByClassName("quote");
+    if (n > quotes.length) {
+      quoteIndex = 1;
+    }
+
+    if (n < 1) {
+      quoteIndex = quotes.length;
+    }
+
+    for (i = 0; i < quotes.length; i++) {
+      quotes[i].style.display = "none";
+    }
+
+    quotes[quoteIndex - 1].style.display = "block";
+  }
+</script>
+
+<style>
+  .quote {
+    display: none;
+  }
+</style>
