@@ -1,0 +1,29 @@
+---
+import { Icon } from "astro-icon/components";
+
+const formLink =
+  "https://c42d.typeform.com/to/zJV3Cx?typeform-source=www.c42d.com";
+---
+
+<nav class="py-2 border-b fixed top-0 right-0 left-0 backdrop-blur">
+  <div class="flex items-center justify-between container mx-auto">
+    <a href="/">
+      <img src="/logo.png" alt="Logo" height="64px" width="64px" />
+    </a>
+    <span class="font-bold text-sm md:text-lg">C42D</span>
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2">
+        <a target="_blank" href={formLink}>
+          <span
+            class="font-bold text-sm md:text-lg hover:text-brandYellow transition delay-150 cursor-pointer tracking-wide"
+            >Start a Project</span
+          >
+        </a>
+        <Icon name="arrowUpRight" class="text-brandYellow" />
+      </div>
+      <button>
+        <Icon name="equal" class="text-brandYellow" />
+      </button>
+    </div>
+  </div>
+</nav>
