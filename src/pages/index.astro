@@ -3,20 +3,26 @@
 import Layout from "../layouts/layout.astro"
 
 // COMPONENTS
+import Header from "../components/common/Header.astro";
+import Footer from "../components/common/Footer.astro";
+import HeaderBanner from "../components/common/HeaderBanner.astro";
+
+// COMPONENTS
+
 import Hero from "../components/index/Hero.astro";
 import Customers from "../components/index/Customers.astro";
 import Work from "../components/index/Work.astro";
 import Data from "../components/index/Data.astro";
 import Quotes from "../components/index/Quotes.astro";
 import Blog from "../components/index/Blog.astro";
-import Header from "../components/common/Header.astro";
-import Footer from "../components/common/Footer.astro";
+
 ---
 <Layout
 	title="Branding Agency NYC - Top Creative Agency - C42D"
 	description=""
 	image=""
 >
+	<HeaderBanner />
 	<Header />
 	<Hero />
 	<Customers />

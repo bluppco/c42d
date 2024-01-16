@@ -2,24 +2,31 @@
 import { Icon } from "astro-icon/components"
 import Container from "../../layouts/Container.astro"
 
-const formLink =
-  "https://c42d.typeform.com/to/zJV3Cx?typeform-source=www.c42d.com";
+const formLink = "https://c42d.typeform.com/to/zJV3Cx?typeform-source=www.c42d.com"
+
+const runtime = Astro.locals.runtime
+const env = runtime.env.ENVIRONMENT
 ---
 
-<nav class="py-2 border-b fixed top-0 right-0 left-0 backdrop-blur z-10">
+<nav class={`py-2 border-b fixed top-0 right-0 left-0 backdrop-blur z-10 ${ env === "staging" ? "mt-10" : "" }`}>
 	<Container>
-	<div class="flex items-center justify-between">
-		<a href="/">
-			<img src="/logo.png" alt="Logo" height="64px" width="64px" />
-		</a>
-		<span class="font-bold text-sm md:text-lg">C42D</span>
-		<div class="flex items-center gap-4">
+	<div class="grid grid-cols-3 items-center">
+		<div class="flex justify-start">
+			<a href="/">
+				<img src="/logo.png" alt="Logo" height="64px" width="64px" />
+			</a>
+		</div>
+		<div class="flex justify-center">
+			<a href="/">
+				<span class="font-bold text-sm md:text-lg text-white">C42D</span>
+			</a>
+		</div>
+		<div class="flex items-center gap-4 justify-end">
 			<div class="flex items-center gap-2">
 				<a target="_blank" href={formLink}>
-				<span
-					class="font-bold text-sm md:text-lg hover:text-brandYellow transition delay-150 cursor-pointer tracking-wide"
-					>Start a Project</span
-				>
+					<span class="font-bold text-sm md:text-lg hover:text-brandYellow transition delay-150 cursor-pointer tracking-wide">
+						Start a Project
+					</span>
 				</a>
 				<Icon name="arrowUpRight" class="text-brandYellow" />
 			</div>
