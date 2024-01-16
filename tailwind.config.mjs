@@ -10,7 +10,7 @@ export default {
         		brandYellow: "#fed441",
       		},
       		fontFamily: {
-        		serif: ["Libre Baskerville", ...defaultTheme.fontFamily.serif],
+        		libreBaskerville: ["Libre Baskerville"],
       		},
 			container: {
 				padding: "2rem",
