@@ -1,5 +1,6 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Icon } from "astro-icon/components"
+import Container from "../../layouts/Container.astro"
 
 const customers = [
 	"youtube",
@@ -19,13 +20,14 @@ const customers = [
 	"fluent",
 ];
 ---
-
-<section class="">
-	<div class="grid grid-cols-3 md:grid-cols-5 place-items-center gap-x-10">
-		{
-			customers.map((brand) => (
-				<Icon name={`customers/${brand}`} class="h-28 w-28 lg:h-44 lg:w-44" />
-			))
-		}
-	</div>
-</section>
+<Container>
+	<section class="">
+		<div class="grid grid-cols-3 md:grid-cols-5 place-items-center">
+			{
+				customers.map((brand) => (
+					<Icon name={`customers/${brand}`} height={100} width={100} />
+				))
+			}
+		</div>
+	</section>
+</Container>
