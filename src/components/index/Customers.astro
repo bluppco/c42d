@@ -2,30 +2,30 @@
 import { Icon } from "astro-icon/components";
 
 const customers = [
-  "youtube",
-  "kindbody",
-  "cuebiq",
-  "brightline",
-  "midday",
-  "cgs",
-  "foundation",
-  "nesterly",
-  "shazam",
-  "reebok",
-  "k50",
-  "andala",
-  "atai",
-  "sage",
-  "fluent",
+	"youtube",
+	"kindbody",
+	"cuebiq",
+	"brightline",
+	"midday",
+	"cgs",
+	"foundation",
+	"nesterly",
+	"shazam",
+	"reebok",
+	"k50",
+	"andala",
+	"atai",
+	"sage",
+	"fluent",
 ];
 ---
 
 <section class="m-16 mx-auto">
-  <div class="grid grid-cols-3 md:grid-cols-5 place-items-center">
-    {
-      customers.map((brand) => (
-        <Icon name={`customers/${brand}`} height={100} width={100} />
-      ))
-    }
-  </div>
+	<div class="grid grid-cols-3 md:grid-cols-5 place-items-center">
+		{
+			customers.map((brand) => (
+				<Icon name={`customers/${brand}`} height={100} width={100} />
+			))
+		}
+	</div>
 </section>

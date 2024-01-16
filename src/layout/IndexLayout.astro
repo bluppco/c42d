@@ -6,37 +6,37 @@ import "@fontsource/libre-baskerville";
 ---
 
 <html lang="en">
-  <head class="dark">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Branding Agency NYC - Top Creative Agency - C42D</title>
-    <link
-      rel="icon"
-      href="https://www.c42d.com/wp-content/uploads/2022/03/cropped-2022-favicon-32x32.png"
-    />
+    <head class="dark">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Branding Agency NYC - Top Creative Agency - C42D</title>
+		<link
+			rel="icon"
+			href="https://www.c42d.com/wp-content/uploads/2022/03/cropped-2022-favicon-32x32.png"
+		/>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="bg-baseBackground text-white">
-    <Header />
-    <slot />
-    <Footer />
-  </body>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap"
+			rel="stylesheet"
+		/>
+    </head>
+    <body class="bg-baseBackground text-white">
+		<Header />
+		<slot />
+		<Footer />
+    </body>
 </html>
 
 <style>
-  body {
-    background-image: radial-gradient(
-      circle,
-      rgb(2, 30, 53) 0%,
-      rgb(0, 0, 0) 100%
-    );
-    height: 100vh;
-  }
+	body {
+		background-image: radial-gradient(
+		circle,
+		rgb(2, 30, 53) 0%,
+		rgb(0, 0, 0) 100%
+		);
+		height: 100vh;
+	}
 </style>
