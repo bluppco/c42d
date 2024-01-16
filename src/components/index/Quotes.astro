@@ -2,43 +2,42 @@
 import SingleQuote from "./SingleQuote.astro";
 ---
 
-<section class="relative p-16">
+<section class="h-96 relative m-16">
 	<div class="quote">
 		<SingleQuote
-			name="Mallory Walsh"
+			name="mallory walsh"
 			post="head of marketing, teal health"
-			quote="I could not be happier with my decision to select C42D for this project; they were the most responsive, detailed, and efficient agency I’ve ever experienced. I could not be more proud of the work we created together and the brand we’ve built."
+			quote="i could not be happier with my decision to select c42d for this project; they were the most responsive, detailed, and efficient agency i’ve ever experienced. i could not be more proud of the work we created together and the brand we’ve built."
+		/>
+	</div>	
+	<div class="quote">
+		<SingleQuote
+			name="alexis rodriguez"
+			post="head of global marketing solutions, shazam"
+			quote="we’ve interviewed several other large firms, but the c42d team seemed to understand our goals more quickly than others."
 		/>
 	</div>
 	<div class="quote">
 		<SingleQuote
-			name="Alexis Rodriguez"
-			post="Head of Global Marketing Solutions, Shazam"
-			quote="We’ve interviewed several other large firms, but the C42D team seemed to understand our goals more quickly than others."
+			name="jay hack"
+			post="founder & ceo, mira ai"
+			quote="they truly seemed to understand our base and vision. work with c42d, they’re awesome. we highly recommend them."
 		/>
 	</div>
-	<div class="quote">
-		<SingleQuote
-			name="Jay Hack"
-			post="Founder & CEO, Mira AI"
-			quote="They truly seemed to understand our base and vision. Work with C42D, they’re awesome. We highly recommend them."
-		/>
-	</div>
-
-	<span
+	<div
 		id="left"
 		class="absolute text-4xl bottom-16 left-16 cursor-pointer text-brandYellow"
-		>&larr;</span
-	>
-	<span
+		>&larr;
+	</div>
+	<div
 		id="right"
 		class="absolute text-4xl bottom-16 right-16 cursor-pointer text-brandYellow"
-		onclick="plusSlider(1)">&rarr;</span
-	>
+		>&rarr;
+	</div>
 </section>
 
 <script>
-	let quoteIndex = 1;
+	let quoteIndex = 0;
 	showQuotes(quoteIndex);
 
 	document.getElementById("left").addEventListener("click", () => {
@@ -48,28 +47,22 @@ import SingleQuote from "./SingleQuote.astro";
 		showQuotes((quoteIndex += 1));
 	});
 
-	function showQuotes(n: number) {
-		let i: number;
-		let quotes = document.getElementsByClassName("quote");
+	function showQuotes(givenQuoteIndex) {
+		const allQuotes = document.getElementsByClassName("quote");
+		const lastQuoteIndex = allQuotes.length - 1
 
-		if (n > quotes.length) {
-			quoteIndex = 1;
+		if (givenQuoteIndex > lastQuoteIndex) {
+			quoteIndex = 0;
 		}
 
-		if (n < 1) {
-			quoteIndex = quotes.length;
+		if (givenQuoteIndex < 0) {
+			quoteIndex = lastQuoteIndex;
 		}
 
-		for (i = 0; i < quotes.length; i++) {
-			quotes[i].style.display = "none";
+		for (let i = 0; i < allQuotes.length; i++) {
+			allQuotes[i].classList.add("hidden")
 		}
 
-		quotes[quoteIndex - 1].style.display = "block";
+		allQuotes[quoteIndex].classList.remove("hidden")
 	}
-	</script>
-
-<style>
-	.quote {
-		display: none;
-	}
-</style>
+</script>
