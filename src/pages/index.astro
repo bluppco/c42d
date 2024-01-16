@@ -1,23 +1,28 @@
 ---
 import IndexLayout from "../layout/IndexLayout.astro";
+import Header from "../components/common/Header.astro";
+import Footer from "../components/common/Footer.astro";
+
 import Hero from "../components/index/Hero.astro";
 import Customers from "../components/index/Customers.astro";
 import Work from "../components/index/Work.astro";
 import Data from "../components/index/Data.astro";
 import Quotes from "../components/index/Quotes.astro";
 import Blog from "../components/index/Blog.astro";
+
 ---
 
 <IndexLayout>
-	<div class="mt-44 container mx-auto">
+	<Header />
+	<div class="container flex flex-col mx-auto items-center gap-24 my-44 lg:my-64">
 		<Hero />
 		<Customers />
-		<div class="border-b">
-			<p class="uppercase text-2xl py-2 font-serif">
+		<div>
+			<p class="uppercase text-2xl font-serif border-b">
 				area of speciality:
 			</p>
 			<Work
-				domain="healthcase"
+				domain="healthcare"
 				work="Branding"
 				project="Kindbody"
 				img="/images/kindbody.png"
@@ -37,7 +42,7 @@ import Blog from "../components/index/Blog.astro";
 				alt="The Humane branding banner"
 			/>
 		</div>
-		<div class="flex mt-32 lg:mt-64">
+		<div class="flex">
 			<Data
 				data="50"
 				title="verified reviews"
@@ -59,7 +64,7 @@ import Blog from "../components/index/Blog.astro";
 			post="Software Developer"
 			quote="I love you the more in that I believe you had liked me for my own sake and for nothing else I love you the more in that I believe you had liked me for my own sake and for nothing else"
 		/>
-		<div class="mb-32">
+		<div>
 			<Blog
 				title="C42D Client Midday Featured in Fast Company"
 				img="/images/blog/midday.png"
@@ -77,4 +82,5 @@ import Blog from "../components/index/Blog.astro";
 			/>
 		</div>
 	</div>
+	<Footer />
 </IndexLayout>
