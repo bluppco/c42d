@@ -8,7 +8,6 @@ import Footer from "../components/common/Footer.astro";
 import HeaderBanner from "../components/common/HeaderBanner.astro";
 
 // COMPONENTS
-
 import Hero from "../components/index/Hero.astro";
 import Customers from "../components/index/Customers.astro";
 import Work from "../components/index/Work.astro";
@@ -16,11 +15,14 @@ import Data from "../components/index/Data.astro";
 import Quotes from "../components/index/Quotes.astro";
 import Blog from "../components/index/Blog.astro";
 
+// CONSTANTS
+import { OG_IMAGE } from "../constants/website";
 ---
+
 <Layout
 	title="Branding Agency NYC - Top Creative Agency - C42D"
-	description=""
-	image=""
+	description="C42D is a New York branding agency with a focus on healthcare branding, branding for startups, and branding for venture capital firms."
+	image={OG_IMAGE}
 >
 	<HeaderBanner />
 	<Header />
@@ -94,13 +96,3 @@ import Blog from "../components/index/Blog.astro";
 	</div>
 	<Footer />
 </Layout>
-<style>
-	body {
-		background-image: radial-gradient(
-		circle,
-		rgb(2, 30, 53) 0%,
-		rgb(0, 0, 0) 100%
-		);
-		height: 100vh;
-	}
-</style>
