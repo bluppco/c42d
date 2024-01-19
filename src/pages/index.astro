@@ -1,4 +1,10 @@
 ---
+import { homeAPI } from "../api/home";
+
+const runtime = Astro.locals.runtime
+
+const {} = homeAPI(runtime.env.ENVIRONMENT)
+
 // LAYOUTS
 import Layout from "../layouts/Layout.astro"
 
@@ -7,16 +13,16 @@ import Header from "../components/common/Header.astro";
 import Footer from "../components/common/Footer.astro";
 import HeaderBanner from "../components/common/HeaderBanner.astro";
 
-// COMPONENTS
-import Hero from "../components/index/Hero.astro";
-import Customers from "../components/index/Customers.astro";
-import Work from "../components/index/Work.astro";
-import Data from "../components/index/Data.astro";
-import Quotes from "../components/index/Quotes.astro";
-import Blog from "../components/index/Blog.astro";
+import Hero from "../components/home/Hero.astro";
+import Customers from "../components/home/Customers.astro";
+import Speciality from "../components/home/Speciality.astro";
+import Data from "../components/home/Data.astro";
+import Quotes from "../components/home/Quotes.astro";
+import Blog from "../components/home/Blog.astro";
 
 // CONSTANTS
 import { OG_IMAGE } from "../constants/website";
+import Container from "../layouts/Container.astro";
 ---
 
 <Layout
@@ -24,75 +30,35 @@ import { OG_IMAGE } from "../constants/website";
 	description="C42D is a New York branding agency with a focus on healthcare branding, branding for startups, and branding for venture capital firms."
 	image={OG_IMAGE}
 >
+	{/* BluppCo Ad banner on staging */}
 	<HeaderBanner />
+
+	{/* Header */}
 	<Header />
-	<Hero />
-	<Customers />
-	<div class="mt-44 container mx-auto">
-		<div class="border-b">
-			<p class="uppercase text-2xl py-2 font-serif">
-				area of speciality:
-			</p>
-			<Work
-				domain="healthcare"
-				work="Branding"
-				project="Kindbody"
-				img="/images/kindbody.png"
-				alt="Kindbody branding banner"
-			/>
-			<Work
-				work="Branding for venture capital"
-				project="Foundation Capital"
-				img="/images/foundation.png"
-				alt="Foundation branding banner"
-			/>
-			<Work
-				domain="ui/ux"
-				work="design"
-				project="The Humane Space"
-				img="/images/ux.png"
-				alt="The Humane branding banner"
-			/>
-		</div>
-		<div class="flex">
-			<Data
-				data="50"
-				title="verified reviews"
-				description="from real clients on clutch.co"
-			/>
-			<Data
-				data="4.9"
-				title="out of 5"
-				description="average referal rating on clutch.co"
-			/>
-			<Data
-				data="15"
-				title="years in business"
-				description="working from visionary companies"
-			/>
-		</div>
-		<Quotes
-			name="Kunal Singh"
-			post="Software Developer"
-			quote="I love you the more in that I believe you had liked me for my own sake and for nothing else I love you the more in that I believe you had liked me for my own sake and for nothing else"
-		/>
-		<div>
-			<Blog
-				title="C42D Client Midday Featured in Fast Company"
-				img="/images/blog/midday.png"
-				alt="Blog Midday Banner"
-			/>
-			<Blog
-				title="Clutch Names C42D a 2022 Top New York Branding Agenc BY DAVID CARD"
-				img="/images/blog/clutch.png"
-				alt="Blog Clutch Banner"
-			/>
-			<Blog
-				title="C42D Client Kindbody Chosen as a 2022 Breakthrough Brand by Interbrand"
-				img="/images/blog/kindbody.png"
-				alt="Blog Kindbody Banner"
-			/>
-		</div>
-	</div>
+
+	<div class="py-[14em]">
+		<Container>
+		
+			{/* Hero Text */}
+			<Hero />
+
+			<Customers />
+
+			{/* Work */}
+			<Speciality />
+
+			{/* Metric Data */}
+			<Data />
+
+			{/* Quotes */}
+			<Quotes />
+
+			{/* Blogs */}
+			<Blog />
+
+		</Container>
+	</div>	
+
+	{/* Footer */}
 	<Footer />
 </Layout>

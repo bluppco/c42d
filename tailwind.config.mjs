@@ -13,11 +13,10 @@ export default {
         		libreBaskerville: ["Libre Baskerville"],
       		},
 			container: {
-				padding: "2rem",
 				screens: {
 				  	'mac': '1440px',
 				},
-		  },
+			},
     	},
   	},
   	plugins: [],

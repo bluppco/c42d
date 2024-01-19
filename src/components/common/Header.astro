@@ -8,7 +8,7 @@ const runtime = Astro.locals.runtime
 const env = runtime.env.ENVIRONMENT
 ---
 
-<nav class={`py-2 border-b fixed top-0 right-0 left-0 backdrop-blur z-10 ${ env === "staging" ? "mt-10" : "" }`}>
+<nav class={`py-2 border-b fixed top-0 right-0 left-0 backdrop-blur z-10 ${ env === "staging" && "mt-10" }`}>
 	<Container>
 	<div class="grid grid-cols-3 items-center">
 		<div class="flex justify-start">
@@ -24,14 +24,14 @@ const env = runtime.env.ENVIRONMENT
 		<div class="flex items-center gap-4 justify-end">
 			<div class="flex items-center gap-2">
 				<a target="_blank" href={formLink}>
-					<span class="font-bold text-sm md:text-lg hover:text-brandYellow transition delay-150 cursor-pointer tracking-wide">
+					<span class="text-white font-bold text-sm md:text-lg hover:text-brandYellow transition delay-150 cursor-pointer tracking-wide">
 						Start a Project
 					</span>
 				</a>
-				<Icon name="arrowUpRight" class="text-brandYellow" />
+				<Icon name="arrowYellow" font-size="0.7rem"  />
 			</div>
 			<button>
-				<Icon name="equal" class="text-brandYellow" />
+				<Icon name="equal" class="text-brandYellow" font-size="2.5rem" />
 			</button>
 		</div>
 	</div>
