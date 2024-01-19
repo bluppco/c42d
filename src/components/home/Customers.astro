@@ -21,11 +21,11 @@ const customers = [
 ];
 ---
 <Container>
-	<section class="w-[80%] mx-auto">
-		<div class="grid grid-cols-3 lg:grid-cols-5 px-[15px] place-items-center gap-y-14">
+	<section class="w-[80%] mx-auto my-4">
+		<div class="grid grid-cols-3 lg:grid-cols-5 place-items-center gap-y-16">
 			{
 				customers.map((brand) => (
-					<Icon name={`customers/${brand}`} font-size="2rem" />
+					<Icon name={`customers/${brand}`} font-size="2.2rem" />
 				))
 			}
 		</div>
