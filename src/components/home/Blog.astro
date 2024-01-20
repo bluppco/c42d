@@ -1,0 +1,19 @@
+---
+const {data} = Astro.props
+
+import { CDN_LINK } from "../../constants/cdn"
+import BlogSingle from "./BlogSingle.astro"
+---
+
+<section>
+	{
+		data.map((d) => {
+			return <BlogSingle
+					title={d.title}
+					category={d.category}
+					img={CDN_LINK + d.cover}
+					alt={d.slug}
+				/>
+		})
+	}
+</section>

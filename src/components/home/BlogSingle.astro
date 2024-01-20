@@ -1,0 +1,25 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { img, alt, title, category } = Astro.props;
+---
+
+<section class="border-t pt-4 lg:mb-12 flex flex-col lg:flex-row">
+	<img src={img} alt={alt} class="flex-1 h-52 lg:h-full" />
+
+	<div class="flex-1 flex flex-col lg:px-4 justify-between gap-8 lg:gap-2">
+		<div>
+			<span class="text-brandYellow uppercase font-bold text-sm pb-4"
+				>{category}</span>
+
+			<p class="text-3xl font-libreBaskerville">{title}</p>
+		</div>
+		<div class="flex items-center gap-2 font-bold text-xl">
+			<span
+				class="font-bold text-md lg:text-lg hover:text-brandYellow transition delay-150 cursor-pointer"
+				>Read More</span
+			>
+			<Icon name="boldArrow" class="text-brandYellow" />
+		</div>
+	</div>
+</section>

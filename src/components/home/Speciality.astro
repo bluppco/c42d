@@ -1,0 +1,26 @@
+---
+const { data } = Astro.props;
+
+// CONSTANTS
+import {CDN_LINK} from "../../constants/cdn";
+
+import SpecialitySingle from "./SpecialitySingle.astro";
+---
+
+<section >
+	<p class="uppercase text-2xl lg:text-3xl font-libreBaskerville border-b">
+		area of speciality:
+	</p>
+
+	{
+		data.map((d) => {
+			return <SpecialitySingle
+				domain={d.title}
+				work={d.title}
+				project={d.company_name}
+				img={CDN_LINK + d.cover}
+				alt={d.slug}
+			/>
+		})
+	}
+</section>

@@ -1,0 +1,61 @@
+---
+const {data} = Astro.props;
+
+import SingleQuote from "./SingleQuote.astro";
+---
+
+<section class="relative  lg:px-44">
+	{
+		data.map((d) => {
+			return <div class="quote">
+				<SingleQuote
+					name={d.author_name}
+					post={d.author_designation}
+					quote={d.description}
+				/>
+			</div>	
+		})
+	}
+
+	<div
+		id="left"
+		class="absolute text-4xl bottom-4 lg:bottom-8 left-1 lg:left-[30%] cursor-pointer text-brandYellow"
+		>&larr;
+	</div>
+	<div
+		id="right"
+		class="absolute text-4xl bottom-4 lg:bottom-8 right-1 lg:right-[30%] cursor-pointer text-brandYellow"
+		>&rarr;
+	</div>
+</section>
+
+<script>
+	let quoteIndex = 0;
+	showQuotes(quoteIndex);
+
+	document.getElementById("left").addEventListener("click", () => {
+		showQuotes((quoteIndex -= 1));
+	});
+	document.getElementById("right").addEventListener("click", () => {
+		showQuotes((quoteIndex += 1));
+	});
+
+	function showQuotes(givenQuoteIndex) {
+		const allQuotes = document.getElementsByClassName("quote");
+		const lastQuoteIndex = allQuotes.length - 1
+
+		if (givenQuoteIndex > lastQuoteIndex) {
+			quoteIndex = 0;
+		}
+
+		if (givenQuoteIndex < 0) {
+			quoteIndex = lastQuoteIndex;
+		}
+
+		for (let i = 0; i < allQuotes.length; i++) {
+			allQuotes[i].classList.add("hidden")
+		}
+
+		allQuotes[quoteIndex].classList.remove("hidden")
+	}
+</script>

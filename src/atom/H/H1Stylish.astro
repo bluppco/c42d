@@ -1,0 +1,9 @@
+---
+const {text, large} = Astro.props
+
+import '@fontsource/libre-baskerville';
+---
+
+<h1 class={`font-libreBaskerville text-white ${large ? "text-8xl": "text-5xl"} leading-12 lg:leading-5 mb-8`}>
+	{text}
+</h1>

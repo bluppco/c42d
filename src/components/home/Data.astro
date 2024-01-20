@@ -1,0 +1,31 @@
+---
+const {data} = Astro.props;
+
+let achivements = ["", "", ""]
+
+data.forEach((d) => {
+	if (d.section === "Verified Reviews") {
+		achivements[0] = d;
+	}
+	if (d.section === "Referral Rating") {
+		achivements[1] = d;
+	}
+	if (d.section === "Years in Business") {
+		achivements[2] = d;
+	}
+})
+
+import DataSingle from "./DataSingle.astro";
+---
+
+<div class="flex flex-col lg:flex-row px-24">
+	{
+		achivements.map((a) => (
+			<DataSingle
+				data={a.sub_title}
+				title={a.title}
+				description={a.description}
+			/>
+		))
+	}
+</div>
