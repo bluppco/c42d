@@ -1,37 +1,30 @@
 ---
+const {data} = Astro.props;
+
 import SingleQuote from "./SingleQuote.astro";
 ---
 
-<section class="h-96 relative px-44 border">
-	<div class="quote">
-		<SingleQuote
-			name="mallory walsh"
-			post="head of marketing, teal health"
-			quote="i could not be happier with my decision to select c42d for this project; they were the most responsive, detailed, and efficient agency i’ve ever experienced. i could not be more proud of the work we created together and the brand we’ve built."
-		/>
-	</div>	
-	<div class="quote">
-		<SingleQuote
-			name="alexis rodriguez"
-			post="head of global marketing solutions, shazam"
-			quote="we’ve interviewed several other large firms, but the c42d team seemed to understand our goals more quickly than others."
-		/>
-	</div>
-	<div class="quote">
-		<SingleQuote
-			name="jay hack"
-			post="founder & ceo, mira ai"
-			quote="they truly seemed to understand our base and vision. work with c42d, they’re awesome. we highly recommend them."
-		/>
-	</div>
+<section class="relative  lg:px-44">
+	{
+		data.map((d) => {
+			return <div class="quote">
+				<SingleQuote
+					name={d.author_name}
+					post={d.author_designation}
+					quote={d.description}
+				/>
+			</div>	
+		})
+	}
+
 	<div
 		id="left"
-		class="absolute text-4xl bottom-8 left-[30%] cursor-pointer text-brandYellow"
+		class="absolute text-4xl bottom-4 lg:bottom-8 left-1 lg:left-[30%] cursor-pointer text-brandYellow"
 		>&larr;
 	</div>
 	<div
 		id="right"
-		class="absolute text-4xl bottom-8 right-[30%] cursor-pointer text-brandYellow"
+		class="absolute text-4xl bottom-4 lg:bottom-8 right-1 lg:right-[30%] cursor-pointer text-brandYellow"
 		>&rarr;
 	</div>
 </section>

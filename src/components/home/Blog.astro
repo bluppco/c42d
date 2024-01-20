@@ -1,21 +1,20 @@
 ---
-import BlogSingle from "./BlogSingle.astro";
+const {data} = Astro.props
+
+import { CDN_LINK } from "../../constants/cdn"
+import BlogSingle from "./BlogSingle.astro"
 ---
 
 <section>
-	<BlogSingle
-		title="C42D Client Midday Featured in Fast Company"
-		img="/images/blog/midday.png"
-		alt="Blog Midday Banner"
-	/>
-	<BlogSingle
-		title="Clutch Names C42D a 2022 Top New York Branding Agenc BY DAVID CARD"
-		img="/images/blog/clutch.png"
-		alt="Blog Clutch Banner"
-	/>
-	<BlogSingle
-		title="C42D Client Kindbody Chosen as a 2022 Breakthrough Brand by Interbrand"
-		img="/images/blog/kindbody.png"
-		alt="Blog Kindbody Banner"
-	/>
+	{
+		data.map((d) => {
+			return <BlogSingle
+					title={d.title}
+					category={d.category}
+					// img={CDN_LINK + d.cover}
+					img="/images/blog/clutch.png"
+					alt={d.slug}
+				/>
+		})
+	}
 </section>

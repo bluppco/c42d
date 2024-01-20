@@ -3,7 +3,7 @@ import { homeAPI } from "../api/home";
 
 const runtime = Astro.locals.runtime
 
-const {} = homeAPI(runtime.env.ENVIRONMENT)
+const {meta_tags, home, news, speciality, testimonials} = await homeAPI(runtime.env.ENVIRONMENT)
 
 // LAYOUTS
 import Layout from "../layouts/Layout.astro"
@@ -26,8 +26,8 @@ import Container from "../layouts/Container.astro";
 ---
 
 <Layout
-	title="Branding Agency NYC - Top Creative Agency - C42D"
-	description="C42D is a New York branding agency with a focus on healthcare branding, branding for startups, and branding for venture capital firms."
+	title={meta_tags.title}
+	description={meta_tags.description}
 	image={OG_IMAGE}
 >
 	{/* BluppCo Ad banner on staging */}
@@ -40,21 +40,21 @@ import Container from "../layouts/Container.astro";
 		<Container>
 		
 			{/* Hero Text */}
-			<Hero />
+			<Hero data={home} />
 
-			<Customers />
+			<Customers data={home} />
 
 			{/* Work */}
-			<Speciality />
+			<Speciality data={speciality} />
 
 			{/* Metric Data */}
-			<Data />
+			<Data data={home} />
 
 			{/* Quotes */}
-			<Quotes />
+			<Quotes data={testimonials} />
 
 			{/* Blogs */}
-			<Blog />
+			<Blog data={news} />
 
 		</Container>
 	</div>	

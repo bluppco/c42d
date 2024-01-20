@@ -5,23 +5,23 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer class="border-t">
-	<div class="flex py-8 lg:py-16 justify-between container mx-auto h-full">
+	<div class="flex flex-col lg:flex-row px-6 py-8 lg:py-16 justify-between container mx-auto h-full">
 		<div class="">
 		<div class="mb-16">
 			<img src="/logo.png" alt="Logo" width="70" height="70" />
-			<p class="w-96 text-md lg:text-xl">
+			<p class="w-full lg:w-96 text-md lg:text-xl">
 			C42D is a New York branding agency with a focus on healthcare
 			branding, branding for startups, and branding for venture capital
 			firms
 			</p>
 		</div>
-		<div class="flex items-center gap-2 font-bold text-2xl">
+		<div class="flex items-center gap-2 font-bold text-xl lg:text-2xl">
 			<span>Start a Project</span>
 			<Icon name="boldArrow" class="text-brandYellow" />
 		</div>
 		</div>
 		<div class="flex flex-col justify-between">
-		<div class="flex items-center gap-4 justify-end">
+		<div class="flex items-center gap-4 justify-start lg:justify-end">
 			<span
 			class="text-lg lg:text-xl font-bold hover:text-brandYellow transition delay-150 cursor-pointer"
 			>Enhance Your Inbox</span
@@ -29,7 +29,7 @@ const currentYear = new Date().getFullYear();
 			<Icon name="arrowRight" class="text-brandYellow" />
 		</div>
 		<div>
-			<div class="flex items-center gap-2 justify-end py-4">
+			<div class="flex items-center gap-2 justify-start lg:justify-end py-4">
 			<Icon name="socials/dribble" />
 			<Icon name="socials/fb" />
 			<Icon name="socials/in" />
