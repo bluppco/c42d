@@ -11,8 +11,7 @@ import BlogSingle from "./BlogSingle.astro"
 			return <BlogSingle
 					title={d.title}
 					category={d.category}
-					// img={CDN_LINK + d.cover}
-					img="/images/blog/clutch.png"
+					img={CDN_LINK + d.cover}
 					alt={d.slug}
 				/>
 		})
