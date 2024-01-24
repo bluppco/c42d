@@ -15,5 +15,5 @@ export default defineConfig({
       type: 'pages'
     }
   }),
-  integrations: [mdx(), tailwind(), react(), icon()]
+  integrations: [mdx(), tailwind({applyBaseStyles: false}), react(), icon()]
 });
