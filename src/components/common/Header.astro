@@ -8,7 +8,7 @@ const runtime = Astro.locals.runtime
 const env = runtime.env.ENVIRONMENT
 ---
 
-<nav class={`py-2 border-b fixed top-0 right-0 left-0 backdrop-blur z-10 ${ env === "staging" && "mt-10" }`}>
+<nav class={`py-2 border-b fixed top-0 right-0 left-0 backdrop-blur z-10 bg-baseBackground ${ env === "staging" && "mt-10" }`}>
 	<Container>
 	<div class="grid grid-cols-3 items-center">
 		<div class="flex justify-start">
