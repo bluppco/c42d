@@ -7,6 +7,8 @@ const {
 
 // IMPORTING CONSTANTS
 import { WEBSITE, FAVICON } from "../constants/website"
+
+import "@/styles/globals.css"
 ---
 
 <!DOCTYPE html>
@@ -31,7 +33,7 @@ import { WEBSITE, FAVICON } from "../constants/website"
 
         <link rel="icon" type="image/x-icon" href={ FAVICON }>
     </head>
-    <body class="bg-baseBackground text-white">
+    <body>
         <slot />
     </body>
 </html>
